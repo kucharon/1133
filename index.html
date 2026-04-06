@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>回收管理系统 - 登录</title>
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login-form">
+            <div class="logo">
+                <div style="width: 160px; height: 160px; background-color: #3b82f6; border-radius: 32px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                    <i class="fas fa-recycle" style="font-size: 80px; color: #fff;"></i>
+                </div>
+                <span class="logo-text">回收管理系统</span>
+            </div>
+            
+            <div class="form-item">
+                <input type="text" id="account" class="form-input" placeholder="请输入账号">
+            </div>
+            
+            <div class="form-item">
+                <input type="password" id="password" class="form-input" placeholder="请输入密码">
+            </div>
+            
+            <button class="btn btn-primary" onclick="login()">登录</button>
+            
+            <div class="login-options">
+                <span class="login-option" onclick="goToRegister()">注册账号</span>
+                <span class="login-option" onclick="forgotPassword()">忘记密码</span>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/app.js"></script>
+</body>
+</html>

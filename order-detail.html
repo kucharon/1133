@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>回收管理系统 - 订单详情</title>
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- 头部 -->
+    <div class="header">
+        <div class="header-left">
+            <i class="fas fa-arrow-left" onclick="navigateTo('orders')"></i>
+        </div>
+        <div class="header-title">订单详情</div>
+        <div class="header-right"></div>
+    </div>
+    
+    <div class="container">
+        <!-- 订单状态 -->
+        <div class="status-card status-processing">
+            <div class="status-icon">
+                <i class="fas fa-spinner"></i>
+            </div>
+            <div class="status-info">
+                <span class="status-text">进行中</span>
+                <span class="status-desc">订单正在处理中，请耐心等待</span>
+            </div>
+        </div>
+        
+        <!-- 订单信息 -->
+        <div class="info-card">
+            <div class="info-header">
+                <span class="info-title">订单信息</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">订单号</span>
+                <span class="info-value">ORD-20260406-002</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">下单时间</span>
+                <span class="info-value">2026-04-06 09:15</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">订单来源</span>
+                <span class="info-value">门店</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">业务员</span>
+                <span class="info-value">-</span>
+            </div>
+        </div>
+        
+        <!-- 客户信息 -->
+        <div class="info-card">
+            <div class="info-header">
+                <span class="info-title">客户信息</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">客户姓名</span>
+                <span class="info-value">李四</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">联系电话</span>
+                <span class="info-value">139****5678</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">地址</span>
+                <span class="info-value">上海市浦东新区</span>
+            </div>
+        </div>
+        
+        <!-- 回收信息 -->
+        <div class="info-card">
+            <div class="info-header">
+                <span class="info-title">回收信息</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">品类</span>
+                <span class="info-value">小数码</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">重量</span>
+                <span class="info-value">2.3kg</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">单价</span>
+                <span class="info-value">¥370</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">金额</span>
+                <span class="info-value amount">¥850</span>
+            </div>
+        </div>
+        
+        <!-- 操作按钮 -->
+        <div class="action-buttons">
+            <button class="btn btn-secondary" onclick="cancelOrder()">
+                取消订单
+            </button>
+            <button class="btn btn-primary" onclick="completeOrder()">
+                完成订单
+            </button>
+            <button class="btn btn-primary" onclick="printOrder()">
+                打印订单
+            </button>
+        </div>
+    </div>
+    
+    <script src="js/app.js"></script>
+</body>
+</html>

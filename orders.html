@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>回收管理系统 - 订单</title>
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- 头部 -->
+    <div class="header">
+        <div class="header-left"></div>
+        <div class="header-title">订单管理</div>
+        <div class="header-right">
+            <i class="fas fa-plus" onclick="navigateTo('add-order')"></i>
+        </div>
+    </div>
+    
+    <div class="container">
+        <!-- 筛选条件 -->
+        <div class="filter-bar">
+            <div class="filter-item active" data-filter="all" onclick="setFilter('all')">
+                <span>全部</span>
+            </div>
+            <div class="filter-item" data-filter="pending" onclick="setFilter('pending')">
+                <span>待审批</span>
+            </div>
+            <div class="filter-item" data-filter="processing" onclick="setFilter('processing')">
+                <span>进行中</span>
+            </div>
+            <div class="filter-item" data-filter="completed" onclick="setFilter('completed')">
+                <span>已完成</span>
+            </div>
+        </div>
+        
+        <!-- 订单列表 -->
+        <div class="order-list">
+            <div class="order-item" onclick="navigateTo('order-detail')">
+                <div class="order-header">
+                    <span class="order-id">订单号: ORD-20260406-001</span>
+                    <span class="status-tag status-completed">已完成</span>
+                </div>
+                <div class="order-body">
+                    <span class="order-customer">张三</span>
+                    <span class="order-amount">¥1200</span>
+                </div>
+                <div class="order-footer">
+                    <span class="order-time">2026-04-06 10:30</span>
+                    <span class="order-category">大家电</span>
+                </div>
+                <div class="order-footer" style="margin-top: 8px;">
+                    <span class="order-time">业务员: 张三</span>
+                </div>
+            </div>
+            
+            <div class="order-item" onclick="navigateTo('order-detail')">
+                <div class="order-header">
+                    <span class="order-id">订单号: ORD-20260406-002</span>
+                    <span class="status-tag status-processing">进行中</span>
+                </div>
+                <div class="order-body">
+                    <span class="order-customer">李四</span>
+                    <span class="order-amount">¥850</span>
+                </div>
+                <div class="order-footer">
+                    <span class="order-time">2026-04-06 09:15</span>
+                    <span class="order-category">小数码</span>
+                </div>
+            </div>
+            
+            <div class="order-item" onclick="navigateTo('order-detail')">
+                <div class="order-header">
+                    <span class="order-id">订单号: ORD-20260406-003</span>
+                    <span class="status-tag status-pending">待审批</span>
+                </div>
+                <div class="order-body">
+                    <span class="order-customer">王五</span>
+                    <span class="order-amount">¥320</span>
+                </div>
+                <div class="order-footer">
+                    <span class="order-time">2026-04-06 08:45</span>
+                    <span class="order-category">小配件</span>
+                </div>
+                <div class="order-footer" style="margin-top: 8px;">
+                    <span class="order-time">业务员: 李四</span>
+                </div>
+            </div>
+            
+            <div class="order-item" onclick="navigateTo('order-detail')">
+                <div class="order-header">
+                    <span class="order-id">订单号: ORD-20260405-015</span>
+                    <span class="status-tag status-pending">待审批</span>
+                </div>
+                <div class="order-body">
+                    <span class="order-customer">赵六</span>
+                    <span class="order-amount">¥1500</span>
+                </div>
+                <div class="order-footer">
+                    <span class="order-time">2026-04-05 16:30</span>
+                    <span class="order-category">大家电</span>
+                </div>
+                <div class="order-footer" style="margin-top: 8px;">
+                    <span class="order-time">业务员: 张三</span>
+                </div>
+            </div>
+            
+            <div class="order-item" onclick="navigateTo('order-detail')">
+                <div class="order-header">
+                    <span class="order-id">订单号: ORD-20260405-014</span>
+                    <span class="status-tag status-completed">已完成</span>
+                </div>
+                <div class="order-body">
+                    <span class="order-customer">钱七</span>
+                    <span class="order-amount">¥680</span>
+                </div>
+                <div class="order-footer">
+                    <span class="order-time">2026-04-05 14:20</span>
+                    <span class="order-category">小数码</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 加载更多 -->
+        <div class="load-more" onclick="loadMore()">
+            <span>加载更多</span>
+        </div>
+    </div>
+    
+    <!-- 底部导航栏 -->
+    <div class="tab-bar">
+        <a href="home.html" class="tab-item">
+            <i class="fas fa-home"></i>
+            <span>首页</span>
+        </a>
+        <a href="orders.html" class="tab-item active">
+            <i class="fas fa-shopping-cart"></i>
+            <span>订单</span>
+        </a>
+        <a href="customers.html" class="tab-item">
+            <i class="fas fa-user"></i>
+            <span>客户</span>
+        </a>
+        <a href="profile.html" class="tab-item">
+            <i class="fas fa-user-circle"></i>
+            <span>我的</span>
+        </a>
+    </div>
+    
+    <script src="js/app.js"></script>
+</body>
+</html>

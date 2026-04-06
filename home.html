@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>回收管理系统 - 首页</title>
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- 头部 -->
+    <div class="header">
+        <div class="header-left"></div>
+        <div class="header-title">首页</div>
+        <div class="header-right">
+            <i class="fas fa-bell" onclick="showToast('消息通知')"></i>
+        </div>
+    </div>
+    
+    <div class="container">
+        <!-- 用户信息 -->
+        <div class="card">
+            <div style="display: flex; align-items: center;">
+                <div class="customer-avatar">
+                    <span>管</span>
+                </div>
+                <div style="flex: 1; margin-left: 16px;">
+                    <div style="font-size: 16px; font-weight: 600; color: #333; margin-bottom: 4px;">管理员</div>
+                    <div style="font-size: 12px; color: #666;">业务员账号</div>
+                </div>
+                <div style="margin-left: 16px;">
+                    <i class="fas fa-cog" style="font-size: 20px; color: #666;" onclick="navigateTo('profile')"></i>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 统计卡片 -->
+        <div style="display: flex; justify-content: space-between; margin-bottom: 16px;">
+            <div class="stat-card" style="flex: 1; margin-right: 8px;">
+                <div class="stat-title">今日订单</div>
+                <div class="stat-value">8</div>
+                <div class="stat-change positive">+12%</div>
+            </div>
+            <div class="stat-card" style="flex: 1; margin-right: 8px;">
+                <div class="stat-title">回收金额</div>
+                <div class="stat-value">¥2580</div>
+                <div class="stat-change negative">-3%</div>
+            </div>
+            <div class="stat-card" style="flex: 1;">
+                <div class="stat-title">待处理</div>
+                <div class="stat-value">3</div>
+                <div class="stat-change positive">+2</div>
+            </div>
+        </div>
+        
+        <!-- 快捷操作 -->
+        <div class="card">
+            <div class="grid">
+                <div class="grid-item" onclick="navigateTo('add-order')">
+                    <i class="fas fa-plus-circle"></i>
+                    <span>新增订单</span>
+                </div>
+                <div class="grid-item" onclick="scanCode()">
+                    <i class="fas fa-qrcode"></i>
+                    <span>扫码回收</span>
+                </div>
+                <div class="grid-item" onclick="navigateTo('customers')">
+                    <i class="fas fa-users"></i>
+                    <span>客户管理</span>
+                </div>
+                <div class="grid-item" onclick="navigateTo('orders')">
+                    <i class="fas fa-list-alt"></i>
+                    <span>订单列表</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 最近订单 -->
+        <div class="card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                <div style="font-size: 14px; font-weight: 600; color: #333;">最近订单</div>
+                <div style="font-size: 12px; color: #3b82f6;" onclick="navigateTo('orders')">查看全部</div>
+            </div>
+            
+            <div style="margin-top: 16px;">
+                <div class="order-item" onclick="navigateTo('order-detail')">
+                    <div class="order-header">
+                        <span class="order-id">订单号: ORD-20260406-001</span>
+                        <span class="status-tag status-completed">已完成</span>
+                    </div>
+                    <div class="order-body">
+                        <span class="order-customer">张三</span>
+                        <span class="order-amount">¥1200</span>
+                    </div>
+                    <div class="order-footer">
+                        <span class="order-time">2026-04-06 10:30</span>
+                        <span class="order-category">大家电</span>
+                    </div>
+                </div>
+                
+                <div class="order-item" onclick="navigateTo('order-detail')">
+                    <div class="order-header">
+                        <span class="order-id">订单号: ORD-20260406-002</span>
+                        <span class="status-tag status-processing">进行中</span>
+                    </div>
+                    <div class="order-body">
+                        <span class="order-customer">李四</span>
+                        <span class="order-amount">¥850</span>
+                    </div>
+                    <div class="order-footer">
+                        <span class="order-time">2026-04-06 09:15</span>
+                        <span class="order-category">小数码</span>
+                    </div>
+                </div>
+                
+                <div class="order-item" onclick="navigateTo('order-detail')">
+                    <div class="order-header">
+                        <span class="order-id">订单号: ORD-20260406-003</span>
+                        <span class="status-tag status-pending">待审批</span>
+                    </div>
+                    <div class="order-body">
+                        <span class="order-customer">王五</span>
+                        <span class="order-amount">¥320</span>
+                    </div>
+                    <div class="order-footer">
+                        <span class="order-time">2026-04-06 08:45</span>
+                        <span class="order-category">小配件</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 底部导航栏 -->
+    <div class="tab-bar">
+        <a href="home.html" class="tab-item active">
+            <i class="fas fa-home"></i>
+            <span>首页</span>
+        </a>
+        <a href="orders.html" class="tab-item">
+            <i class="fas fa-shopping-cart"></i>
+            <span>订单</span>
+        </a>
+        <a href="customers.html" class="tab-item">
+            <i class="fas fa-user"></i>
+            <span>客户</span>
+        </a>
+        <a href="profile.html" class="tab-item">
+            <i class="fas fa-user-circle"></i>
+            <span>我的</span>
+        </a>
+    </div>
+    
+    <script src="js/app.js"></script>
+</body>
+</html>
